@@ -1,4 +1,4 @@
-Here's your beautifully polished and personalized `README.md` for your **GitHub repository** [VihaShahh/Real\_time\_leader\_board](https://github.com/VihaShahh/Real_time_leader_board). It’s rewritten to be **clearer**, **more creative**, and **professional**, with **your name** and **repo URL** embedded:
+
 
 ---
 
@@ -7,7 +7,6 @@ Here's your beautifully polished and personalized `README.md` for your **GitHub 
 
 A powerful backend service to manage dynamic, **real-time leaderboards** across multiple games — built by [Viha Shah](https://github.com/VihaShahh) using modern backend technologies for performance, security, and scalability.
 
-🔗 **Live Project URL**: [roadmap.sh project link](https://roadmap.sh/projects/realtime-leaderboard-system)  
 📂 **GitHub Repo**: [github.com/VihaShahh/Real_time_leader_board](https://github.com/VihaShahh/Real_time_leader_board)
 
 ---
@@ -168,35 +167,18 @@ This system allows users to sign up, log in, submit scores, and compete in real-
 
 ---
 
-## 📈 Future Enhancements
-
-* 🎨 Frontend integration (React/Vue)
-* 📱 Mobile app compatibility
-* 📊 Admin analytics dashboard
-* 🌐 Docker Compose support
-
 ---
 
-## 👩‍💻 Author
-
-**👩 Viha Shah**
 📍 India
 🔗 [LinkedIn](https://www.linkedin.com/in/viha-shah/) | 🐙 [GitHub](https://github.com/VihaShahh)
 
 ---
 
-## ⭐ Star This Repo
 
-If you find this project helpful, consider giving it a ⭐ on [GitHub](https://github.com/VihaShahh/Real_time_leader_board)!
 
 ---
 
 ```
 
-Let me know if you'd like:
-- A matching `README` badge section (build status, license, stars)
-- A simplified summary for your **portfolio website**
-- A Markdown preview version for **LinkedIn post** or **Dev.to blog**
 
-I can help with those too!
 ```
