@@ -1,262 +1,173 @@
-# Real-Time Leaderboard
+---
 
-## Description
+````markdown
+# 🏆 Real-Time Leaderboard System
 
-The Real-Time Leaderboard project is a backend service designed to manage and display real-time leaderboards for various games. It provides a comprehensive set of features for user authentication, game management, and score tracking. Users can sign up, log in, and submit their scores, which are then used to generate dynamic leaderboards. The service includes robust authentication and authorization mechanisms, ensuring secure access to protected routes. It leverages technologies like TypeScript, NestJS, TypeORM, PostgreSQL, and Redis to deliver high performance and scalability. Additionally.
+A powerful backend service to manage dynamic, **real-time leaderboards** across multiple games — built by [Viha Shah](https://github.com/VihaShahh) using modern backend technologies for performance, security, and scalability.
 
-## Project URL
+🔗 **Live Project URL**: [roadmap.sh project link](https://roadmap.sh/projects/realtime-leaderboard-system)  
+📂 **GitHub Repo**: [github.com/VihaShahh/Real_time_leader_board](https://github.com/VihaShahh/Real_time_leader_board)
 
-https://roadmap.sh/projects/realtime-leaderboard-system
+---
 
-## Features
+## 📌 Overview
 
-- User authentication and authorization
+This system allows users to sign up, log in, submit scores, and compete in real-time. It features **JWT authentication**, **role-based access**, **WebSocket live updates**, and a **Redis-powered leaderboard** engine. Whether you're building a competitive game or gamifying your app — this backend has you covered.
 
-  - JWT-based authentication with access and refresh tokens
-  - Protected routes with role-based authorization (admin/user)
-  - Secure password hashing with bcrypt
-  - Automatic token refresh mechanism
-  - Session management with Redis
+---
 
-- User Management
+## 🚀 Core Features
 
-  - CRUD operations (create, read, update, delete)
-  - Profile management
-  - Friend system with request/accept/reject functionality
-  - Real-time messaging between users
-  - Unread message tracking
-  - Message read status updates
+### 🔐 Authentication & Authorization
+- JWT-based access + refresh token flow
+- Bcrypt-secured password hashing
+- Role-based access control (admin/user)
+- Redis-backed session management
 
-- Game Management
+### 👥 User & Social System
+- Full CRUD for user profiles
+- Friend request system (send, accept, reject)
+- Private real-time messaging
+- Unread/read tracking for messages
 
-  - CRUD operations for games
-  - Game rating system
-  - Game description and metadata
-  - Admin-only game management operations
+### 🎮 Game & Score Management
+- Create/edit/delete games (admin only)
+- Submit scores & track history
+- Real-time leaderboard updates via WebSockets
+- Filter scores by date, top player reporting
 
-- Score System
+### 📊 Leaderboards & Rankings
+- Global and game-specific leaderboards
+- Top player ranking with Redis optimization
+- Dynamic score updates with WebSocket integration
+- Filtering by date ranges, users, or game titles
 
-  - Score submission and validation
-  - Historical score tracking
-  - Score timestamps
-  - Score filtering by date range
-  - Top players reporting
+### 🛡️ Robust API Security
+- Rate limiting for abuse prevention
+- Custom exception handling
+- Consistent API responses and request validation
 
-- Real-time Features
+---
 
-  - WebSocket integration for live updates
-  - Real-time message delivery
-  - Real-time leaderboard updates
+## ⚙️ Tech Stack
 
-- Leaderboard System
+| Layer        | Technology                     |
+|--------------|---------------------------------|
+| Language     | TypeScript                      |
+| Backend      | Node.js, NestJS, TypeORM        |
+| Database     | PostgreSQL                      |
+| Caching      | Redis                           |
+| Auth System  | Passport.js, JWT                |
+| Real-Time    | WebSocket                       |
+| Dev Tools    | Docker, Postman, .env config    |
 
-  - Global leaderboards across all games
-  - Game-specific leaderboards
-  - User ranking calculation
-  - Top players reporting by game
-  - Date-range based leaderboard filtering
-  - Redis-powered fast leaderboard queries
+---
 
-- Data Management
+## 🛠️ Installation Guide
 
-  - PostgreSQL database for persistent storage
-  - Redis caching for performance
-  - TypeORM for database operations
-  - Entity relationship management
-  - Data validation and sanitization
+### Prerequisites
+- Node.js & npm
+- PostgreSQL
+- Redis
+- Docker (optional for containerization)
 
-- API Security
+### 🔧 Setup Steps
 
-  - Rate limiting protection
-  - Request validation
-  - Error handling and logging
-  - Custom exception handling
-  - Standardized API responses
-
-- Social Features
-  - Friend management system
-  - Private messaging
-  - Message read receipts
-  - Friend request system
-  - Social interactions tracking
-
-## Installation
-
-1. Clone the repository:
+1. **Clone the repo**  
    ```bash
-   git clone https://github.com/AhmedHossam777/real-time-leaderboard
+   git clone https://github.com/VihaShahh/Real_time_leader_board.git
+   cd Real_time_leader_board
+````
+
+2. **Configure environment**
+   Create a `.env` file with your database and JWT credentials:
+
+   ```env
+   DB_HOST=localhost
+   DB_PORT=5432
+   DB_USERNAME=your_db_user
+   DB_PASSWORD=your_db_password
+   DB_DATABASE=leaderboard_db
+
+   JWT_SECRET=your_jwt_secret
+   ACCESSTOKEN_LIFETIME=3600
+   REFRESHTOKEN_LIFETIME=86400
+   REFRESH_TOKEN_SECRET=another_secret
+
+   REDIS_HOST=localhost
+   REDIS_PORT=6379
+   REDIS_PASSWORD=your_redis_password
    ```
-2. Navigate to the project directory:
-   ```bash
-   cd real-time-leaderboard
-   ```
-3. Setting Up a `.env` File
 
-To configure the environment variables for the project, set up a `.env` file with the following parameters:
+3. **Install dependencies**
 
-```env
-DB_HOST=your_database_host
-DB_PORT=your_database_port
-DB_USERNAME=your_database_username
-DB_PASSWORD=your_database_password
-DB_DATABASE=your_database_name
-
-JWT_SECRET=your_jwt_secret
-ACCESSTOKEN_LIFETIME=access_token_lifetime_in_seconds
-REFRESHTOKEN_LIFETIME=refresh_token_lifetime_in_seconds
-REFRESH_TOKEN_SECRET=your_refresh_token_secret
-
-REDIS_PASSWORD=your_redis_password
-REDIS_HOST=your_redis_host
-REDIS_PORT=your_redis_port
-```
-
-Make sure to replace the placeholders with your actual credentials and values for the environment variables.
-
-3. Install the dependencies:
    ```bash
    npm install
    ```
 
-## Usage
+4. **Start the server**
 
-1. Start the development server:
    ```bash
    npm run start:dev
    ```
-2. The application will be running at `http://localhost:3000`.
 
-## Technology
+5. **Visit**:
+   [http://localhost:3000](http://localhost:3000)
 
-- **TypeScript**
-- **Node.js**
-- **NestJS**
-- **TypeORM**
-- **PostgreSQL**
-- **Redis**
-- **Passport**
-- **JWT**
+---
 
-## API Endpoints
+## 📡 API Endpoints
 
-### Auth
+### ✅ Auth
 
-- **POST /auth/signup**
+| Method | Endpoint             | Description            |
+| ------ | -------------------- | ---------------------- |
+| POST   | `/auth/signup`       | Register new user      |
+| POST   | `/auth/login`        | Log in                 |
+| POST   | `/auth/refreshToken` | Refresh access token   |
+| POST   | `/auth/logout`       | Log out user           |
+| GET    | `/auth/protected`    | Protected route access |
 
-  - Description: Sign up a new user.
-  - Body: `CreateUserDto`
+### 👤 User
 
-- **POST /auth/login**
+| Method | Endpoint              | Description                      |
+| ------ | --------------------- | -------------------------------- |
+| GET    | `/user`               | Get user by email                |
+| PATCH  | `/user/:id`           | Update user                      |
+| DELETE | `/user/:id`           | Delete user                      |
+| GET    | `/user/me`            | Get current user info            |
+| GET    | `/user/ranking`       | Get user’s game-specific ranking |
+| GET    | `/user/ranking/:game` | Top players for a specific game  |
 
-  - Description: Log in a user.
-  - Body: `LoginDto`
+### 🎮 Game
 
-- **GET /auth/protected**
+| Method | Endpoint    | Description         |
+| ------ | ----------- | ------------------- |
+| POST   | `/game`     | Create game (admin) |
+| GET    | `/game/:id` | Get game by ID      |
+| GET    | `/game`     | Search game by name |
+| PATCH  | `/game/:id` | Update game         |
+| DELETE | `/game/:id` | Delete game         |
 
-  - Description: Access a protected route.
-  - Headers: `Authorization: Bearer <token>`
+### 🧾 Score
 
-- **POST /auth/refreshToken**
+| Method | Endpoint             | Description                       |
+| ------ | -------------------- | --------------------------------- |
+| POST   | `/score`             | Submit score for a game           |
+| GET    | `/score`             | Get top scores for a game         |
+| GET    | `/score/top-players` | Report top players (with filters) |
 
-  - Description: Refresh the authentication token.
-  - Body: `{ "refreshToken": "string" }`
+### 🏆 Leaderboard
 
-- **POST /auth/logout**
-  - Description: Log out the current user.
-  - Headers: `Authorization: Bearer <token>`
+| Method | Endpoint            | Description               |
+| ------ | ------------------- | ------------------------- |
+| GET    | `/leaderboard`      | Global leaderboard        |
+| GET    | `/leaderboard/game` | Game-specific leaderboard |
 
-### User
+---
 
-- **GET /user**
+📍 India
+🔗 [LinkedIn](https://www.linkedin.com/in/viha-shah/) | 🐙 [GitHub](https://github.com/VihaShahh)
 
-  - Description: Find a user by email.
-  - Query: `email`
-  - Headers: `Authorization: Bearer <token>`
-
-- **PATCH /user/:id**
-
-  - Description: Update a user by ID.
-  - Params: `id`
-  - Body: `UpdateUserDto`
-  - Headers: `Authorization: Bearer <token>`
-
-- **DELETE /user/:id**
-
-  - Description: Delete a user by ID.
-  - Params: `id`
-  - Headers: `Authorization: Bearer <token>`
-
-- **GET /user/me**
-
-  - Description: Get the current logged-in user.
-  - Headers: `Authorization: Bearer <token>`
-
-- **GET /user/ranking**
-
-  - Description: Get the ranking of the current user for a specific game.
-  - Query: `gameName`
-  - Headers: `Authorization: Bearer <token>`
-
-- **GET /user/ranking/:gameName**
-  - Description: Get the top players for a specific game.
-  - Params: `gameName`
-  - Headers: `Authorization: Bearer <token>`
-
-### Score
-
-- **POST /score**
-
-  - Description: Submit a score for a game.
-  - Body: `CreateScoreDto`
-  - Query: `gameName`
-  - Headers: `Authorization: Bearer <token>`
-
-- **GET /score**
-
-  - Description: Get the highest scores for a game.
-  - Query: `gameName`
-  - Headers: `Authorization: Bearer <token>`
-
-- **GET /score/top-players**
-  - Description: Get a report of the top players for a game within a date range.
-  - Query: `gameId`, `startDate`, `endDate`, `limit`
-  - Headers: `Authorization: Bearer <token>`
-
-### Game
-
-- **POST /game**
-
-  - Description: Create a new game.
-  - Body: `CreateGameDto`
-
-- **GET /game/:id**
-
-  - Description: Find a game by ID.
-  - Params: `id`
-
-- **GET /game**
-
-  - Description: Find a game by name.
-  - Query: `name`
-
-- **PATCH /game/:id**
-
-  - Description: Update a game by ID.
-  - Params: `id`
-  - Body: `UpdateGameDto`
-
-- **DELETE /game/:id**
-  - Description: Delete a game by ID.
-  - Params: `id`
-
-### Leaderboard
-
-- **GET /leaderboard**
-
-  - Description: Get the highest scores.
-  - Headers: `Authorization: Bearer <token>`
-
-- **GET /leaderboard/game**
-  - Description: Get the leaderboard for a specific game.
-  - Query: `gameName`
-  - Headers: `Authorization: Bearer <token>`
+---
+```
